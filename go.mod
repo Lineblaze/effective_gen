@@ -1,4 +1,4 @@
-module github.com/Lineblaze/effective_gen
+module github.com/Lineblaze/effective_mobile_gen
 
 go 1.18
 

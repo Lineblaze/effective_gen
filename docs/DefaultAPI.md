@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**SongsPost**](DefaultAPI.md#SongsPost) | **Post** /songs | 
 [**SongsSongIdDelete**](DefaultAPI.md#SongsSongIdDelete) | **Delete** /songs/{songId} | 
 [**SongsSongIdPatch**](DefaultAPI.md#SongsSongIdPatch) | **Patch** /songs/{songId} | 
+[**SongsTextPost**](DefaultAPI.md#SongsTextPost) | **Post** /songs/text | 
 
 
 
@@ -327,6 +328,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Song**](Song.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## SongsTextPost
+
+> SongsTextPost200Response SongsTextPost(ctx).GetSongTextBody(getSongTextBody).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	getSongTextBody := *openapiclient.NewGetSongTextBody("Muse", "Supermassive Black Hole") // GetSongTextBody | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.DefaultAPI.SongsTextPost(context.Background()).GetSongTextBody(getSongTextBody).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.SongsTextPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SongsTextPost`: SongsTextPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.SongsTextPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiSongsTextPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **getSongTextBody** | [**GetSongTextBody**](GetSongTextBody.md) |  | 
+
+### Return type
+
+[**SongsTextPost200Response**](SongsTextPost200Response.md)
 
 ### Authorization
 

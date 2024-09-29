@@ -115,6 +115,25 @@ paths:
           description: Bad request
         "500":
           description: Internal server error
+  /songs/text:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetSongTextBody'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/_songs_text_post_200_response'
+          description: Paginated song text
+        "400":
+          description: Bad request
+        "500":
+          description: Internal server error
 components:
   schemas:
     SongDetail:
@@ -248,4 +267,43 @@ components:
         link:
           example: https://www.youtube.com/watch?v=Xsp3_a-PMTw
           type: string
+      type: object
+    GetSongTextBody:
+      example:
+        song: Supermassive Black Hole
+        offset: 6
+        limit: 0
+        group: Muse
+      properties:
+        group:
+          example: Muse
+          type: string
+        song:
+          example: Supermassive Black Hole
+          type: string
+        limit:
+          default: 5
+          description: Limit the number of verses returned
+          type: integer
+        offset:
+          default: 0
+          description: Offset for pagination
+          type: integer
+      required:
+      - group
+      - song
+      type: object
+    _songs_text_post_200_response:
+      example:
+        verses:
+        - "Ooh baby, don't you know I suffer?"
+        - "Ooh baby, can you hear me moan?"
+      properties:
+        verses:
+          example:
+          - "Ooh baby, don't you know I suffer?"
+          - "Ooh baby, can you hear me moan?"
+          items:
+            type: string
+          type: array
       type: object

@@ -83,14 +83,17 @@ Class | Method | HTTP request | Description
 *DefaultAPI* | [**SongsPost**](docs/DefaultAPI.md#songspost) | **Post** /songs | 
 *DefaultAPI* | [**SongsSongIdDelete**](docs/DefaultAPI.md#songssongiddelete) | **Delete** /songs/{songId} | 
 *DefaultAPI* | [**SongsSongIdPatch**](docs/DefaultAPI.md#songssongidpatch) | **Patch** /songs/{songId} | 
+*DefaultAPI* | [**SongsTextPost**](docs/DefaultAPI.md#songstextpost) | **Post** /songs/text | 
 
 
 ## Documentation For Models
 
  - [CreateSongBody](docs/CreateSongBody.md)
+ - [GetSongTextBody](docs/GetSongTextBody.md)
  - [GetSongsBody](docs/GetSongsBody.md)
  - [Song](docs/Song.md)
  - [SongDetail](docs/SongDetail.md)
+ - [SongsTextPost200Response](docs/SongsTextPost200Response.md)
  - [UpdateSongBody](docs/UpdateSongBody.md)
 
 
